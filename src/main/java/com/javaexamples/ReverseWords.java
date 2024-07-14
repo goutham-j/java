@@ -15,8 +15,8 @@ public class ReverseWords {
 			rWord += words[i] + " "; 
 		}
 	     
-        rWord = rWord.substring(0, rWord.length() - 1); //remove the empty char at the end
-	    return rWord;
+        	rWord = rWord.substring(0, rWord.length() - 1); //remove the empty char at the end
+	    	return rWord;
 	}
 	
 	// reverse words using for loop
@@ -31,12 +31,12 @@ public class ReverseWords {
 			wordStack.push(w); 
 		}
 		
-        while (!wordStack.isEmpty()) { 
-        	rWord += wordStack.pop() + " "; 
-        }
+        	while (!wordStack.isEmpty()) { 
+        		rWord += wordStack.pop() + " "; 
+        	}
 	     
-        rWord = rWord.substring(0, rWord.length() - 1); //remove the empty char at the end
-	    return rWord;
+        	rWord = rWord.substring(0, rWord.length() - 1); //remove the empty char at the end
+	    	return rWord;
 	}
 	
 	public String reverseWordsArray(String s) {
@@ -56,13 +56,12 @@ public class ReverseWords {
 		}
 		wordStack.push(word);
 		
-        while (!wordStack.isEmpty()) {
-        	rWord += wordStack.pop() + " ";
-        }
+        	while (!wordStack.isEmpty()) {
+        		rWord += wordStack.pop() + " ";
+        	}
         
-        rWord = rWord.substring(0, rWord.length() - 1); //remove the empty char at the end
-        
-	    return rWord;
+        	rWord = rWord.substring(0, rWord.length() - 1); //remove the empty char at the end
+	    	return rWord;
 	}
 
 	public static void main(String[] args) {
@@ -79,5 +78,4 @@ public class ReverseWords {
 		System.out.println("Reversed String - Array: " + tmp + ", Size: " + tmp.length());
 
 	}
-
 }
