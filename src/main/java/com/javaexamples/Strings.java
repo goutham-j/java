@@ -26,7 +26,7 @@ public class Strings
 	}
 	
 	// print only the even words in a sentence
-	static void evenwords(String sentence) {
+	static void evenWords(String sentence) {
 	    int i, j, wordsize; 
 	    
         //split string by multiple delimiters   
@@ -75,8 +75,8 @@ public class Strings
             i++; j--; // increment i and decrement j
         }
 
-	    return isPal;
-	  }
+	return isPal;
+    }
 
 	
     // check if two strings are anagrams
@@ -89,36 +89,56 @@ public class Strings
         // return true if s1 equals s2
         return (t1.equals(t2));
     }
-	
-	  public static void main(String[] args) {
-	    
-	    String s1 = "malayalam";
-	    String s2 = " is a beautiful language";
-	    String s3 = "I love Java programming";
-	    String s4 = "listen";
-	    String s5 = "silent";
-	    
-		  System.out.println("***** Concat ******");
-		  System.out.println(concat(s1, s2));
-	    
-		  System.out.println("\n***** Even Words ******");
-		  System.out.println("Given sentence is \"" + s3 + "\"");
-		  evenwords(s3);
+    
+    // reverse words using for loop
+    static String reverseWords(String s) {
+
+	//split the sentence on blank space
+	String words[] = s.split("\\s");
+	String rWord = "";
+	int i;
 		
-		  System.out.println("\n***** Sort a String ******");
-		  System.out.println("String = " + s1);
-		  System.out.println("Sorted String = " + sort(s1));
-		
-		  System.out.println("\n***** Palindrome ******");
-		  if (isPalindrome(s1))
-		      System.out.println(s1 + " is a palindrome");
-		  else
-			    System.out.println(s1 + " is not a palindrome");
+	for (i = words.length-1; i >= 0; i--) { 
+		rWord += words[i] + " "; 
+	}
+	     
+        rWord = rWord.substring(0, rWord.length() - 1); //remove the empty char at the end
+	    
+	return rWord;
+   }
 	
-		  System.out.println("\n***** Anagrams ******");
-		  if (areAnagrams(s4, s5))
-		      System.out.println(s4 + " & " + s5 + " are Anagrams");
-		  else
-		      System.out.println(s4 + " & " + s5 + " are not Anagrams");
-	  }
+    public static void main(String[] args) {
+	    
+	String s1 = "malayalam";
+	String s2 = " is a beautiful language";
+	String s3 = "I love Java programming";
+	String s4 = "listen";
+	String s5 = "silent";
+	    
+	System.out.println("***** Concat ******");
+	System.out.println(concat(s1, s2));
+	    
+	System.out.println("\n***** Even Words ******");
+	System.out.println("Given sentence is '" + s3 + "'");
+	evenWords(s3);
+		
+	System.out.println("\n***** Sort a String ******");
+	System.out.println("String = " + s1);
+	System.out.println("Sorted String = " + sort(s1));
+		
+	System.out.println("\n***** Palindrome ******");
+	if (isPalindrome(s1))
+		System.out.println(s1 + " is a palindrome");
+	else
+		System.out.println(s1 + " is not a palindrome");
+	
+	System.out.println("\n***** Anagrams ******");
+	if (areAnagrams(s4, s5))
+		System.out.println(s4 + " & " + s5 + " are Anagrams");
+	else
+		System.out.println(s4 + " & " + s5 + " are not Anagrams");
+		      
+	System.out.println("\n***** Reverse Words ******");
+	System.out.println("The reversed wordS of '" + s3 + "' is '" + reverseWords(s3) + "'");
+    }
 }
